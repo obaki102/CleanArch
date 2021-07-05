@@ -22,7 +22,7 @@ namespace CleanArch.UI.Mvc.Controllers
 
         public IActionResult Index()
         {
-            CoursesViewModel model = _courseService.GetCourses();
+            CourseViewModel model = _courseService.GetCourses();
             return View(model);
         }
     }
