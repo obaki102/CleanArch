@@ -28,7 +28,7 @@ namespace CleanArch.Infra.IoC
             services.AddScoped<ICourseRepository, CourseRepository>();
             services.AddScoped<UniversityDBContext>();
 
-            //Domain InMemeoryBus MeadiatR
+            //Domain InMemoryBus MeadiatR
             services.AddScoped<IMediatorHandler, InMemoryBus>();
 
             //Domain Handler
