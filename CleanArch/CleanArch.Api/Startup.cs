@@ -42,7 +42,7 @@ namespace CleanArch.Api
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CleanArch.Api", Version = "v1" });
             });
 
-            DependencyContainer.RegisterServices(services);
+            RegisterServices(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -67,6 +67,10 @@ namespace CleanArch.Api
             {
                 endpoints.MapControllers();
             });
+        }
+        private static void RegisterServices(IServiceCollection services)
+        {
+            DependencyContainer.RegisterServices(services);
         }
 
     }

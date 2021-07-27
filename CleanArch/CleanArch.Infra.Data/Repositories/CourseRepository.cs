@@ -24,14 +24,13 @@ namespace CleanArch.Infra.Data.Repositores
             return _universityDBContext.Courses;
         }
 
-        public async Task<bool> AddCourseAsync(Course course)
+        public Task<bool> AddCourse(Course course)
         {
-            await _universityDBContext.AddAsync(course);
+            _universityDBContext.Add(course);
 
-            var created = await _universityDBContext.SaveChangesAsync();
+            var created = _universityDBContext.SaveChanges();
 
-            return created > 0;
-
+            return Task.FromResult(created > 0);
         }
     }
 }
