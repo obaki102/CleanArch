@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CleanArch.Infra.IoC;
+using MediatR;
 
 namespace CleanArch.UI.Mvc
 {
@@ -42,7 +43,7 @@ namespace CleanArch.UI.Mvc
                         Configuration.GetConnectionString("UniversityDBConnection")));
 
             services.AddControllersWithViews();
-
+            services.AddMediatR(typeof(Startup));
             RegisterServices(services);
         }
 
