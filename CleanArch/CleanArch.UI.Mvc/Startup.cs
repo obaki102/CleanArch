@@ -15,6 +15,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CleanArch.Infra.IoC;
 using MediatR;
+using CleanArch.Mvc.Configurations;
 
 namespace CleanArch.UI.Mvc
 {
@@ -44,6 +45,7 @@ namespace CleanArch.UI.Mvc
 
             services.AddControllersWithViews();
             services.AddMediatR(typeof(Startup));
+            services.RegisterAutomapper();
             RegisterServices(services);
         }
 

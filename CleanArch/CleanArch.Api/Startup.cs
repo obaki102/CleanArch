@@ -15,6 +15,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using MediatR;
+using CleanArch.Api.Configurations;
 
 namespace CleanArch.Api
 {
@@ -36,6 +37,7 @@ namespace CleanArch.Api
                       Configuration.GetConnectionString("UniversityDBConnection")));
 
             services.AddMediatR(typeof(Startup));
+            services.RegisterAutomapper();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
